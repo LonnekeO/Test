@@ -4,7 +4,6 @@ library(bslib)
 library(thematic)
 library(tidyverse)
 library(gitlink)
-library(ggplot2)
 
 # Read data from a CSV file and perform data preprocessing
 expansions <- read_csv("data/expansions.csv") |>
@@ -29,6 +28,7 @@ overall_rates <- expansions |>
 rates <- structure(overall_rates$rate, names = overall_rates$evaluation)
 
 # Define lists for propensity, contract and industry choices
+propensities <- c("Good", "Average", "Poor")
 contracts <- c("Monthly", "Annual")
 industries <- c("Academia",
                 "Energy",
